@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misi Sejarah Bab 8 - Edisi Mesra Murid</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        display: ['Fredoka', 'cursive', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                            yellow: '#f59e0b',
+                            green: '#10b981',
+                            pink: '#ec4899',
+                            bg: '#f0f9ff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 50%, #fef3c7 100%);
+            min-height: 100vh;
+        }
+        .card-friendly {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 4px solid #ffffff;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
+        .btn-friendly {
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-friendly:hover:not(:disabled) {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.12);
+        }
+        .btn-friendly:active:not(:disabled) {
+            transform: translateY(2px) scale(0.98);
+        }
+        .bubble-glow {
+            animation: bounceSlow 3s infinite ease-in-out;
+        }
+        @keyframes bounceSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0f2fe;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-slate-800 antialiased selection:bg-amber-300">
+
+    <!-- Header Navbar -->
+    <header class="w-full bg-white/90 backdrop-blur-md border-b-4 border-blue-400 sticky top-0 z-50 shadow-md">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-gradient-to-tr from-amber-400 to-amber-300 text-slate-900 p-2.5 rounded-2xl shadow-md border-2 border-white bubble-glow">
+                    <i class="fa-solid fa-crown text-2xl text-amber-900"></i>
+                </div>
+                <div>
+                    <h1 class="font-display text-xl sm:text-2xl font-bold text-blue-600 leading-none">
+                        MISI SEJARAH T2 🚀
+                    </h1>
+                    <p class="text-xs sm:text-sm text-emerald-600 font-extrabold tracking-wide mt-0.5">Bab 8: Kedah, Kelantan, N. Sembilan & Perlis</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <!-- Butang Full Screen -->
+                <button id="fullscreenBtn" onclick="toggleFullScreen()" class="flex items-center gap-2 bg-purple-50 hover:bg-purple-100 text-purple-700 px-3.5 py-2 rounded-2xl text-xs sm:text-sm font-extrabold transition-all border-2 border-purple-200">
+                    <i id="fullscreenIcon" class="fa-solid fa-expand text-purple-600"></i>
+                    <span id="fullscreenStatus" class="hidden sm:inline">Skrin Penuh</span>
+                </button>
+
+                <!-- Butang Muzik -->
+                <button id="bgmToggleBtn" onclick="toggleBGM()" class="flex items-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-700 px-3.5 py-2 rounded-2xl text-xs sm:text-sm font-extrabold transition-all border-2 border-blue-200">
+                    <i id="bgmIcon" class="fa-solid fa-music text-amber-500"></i>
+                    <span id="bgmStatus" class="hidden sm:inline">Muzik: ON</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow flex items-center justify-center p-3 sm:p-6">
+        <div class="w-full max-w-3xl">
+
+            <!-- 1. LANDING & REGISTRATION SCREEN -->
+            <section id="startScreen" class="card-friendly rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden my-2 border-t-8 border-t-amber-400">
+                <div class="relative z-10">
+                    <span class="inline-block bg-amber-100 text-amber-800 border-2 border-amber-300 font-black text-xs uppercase tracking-wider px-4 py-2 rounded-full mb-3 shadow-sm bubble-glow">
+                        ⭐ Latihan Interaktif Murid ⭐
+                    </span>
+                    
+                    <h2 class="font-display text-3xl sm:text-5xl font-black text-slate-800 mb-3 leading-tight">
+                        Mari Belajar <span class="text-blue-600">Bab 8!</span> 📚✨
+                    </h2>
+                    
+                    <p class="text-slate-600 font-bold text-sm sm:text-base mb-6 max-w-xl mx-auto leading-relaxed">
+                        Jawab <span class="text-amber-600 font-extrabold">40 Soalan Objektif</span> mengenai Kerajaan Kedah, Kelantan, Negeri Sembilan dan Perlis dengan <span class="text-purple-600 font-extrabold">Kad Booster Power-Up</span>!
+                    </p>
+
+                    <!-- Student Registration Form -->
+                    <div class="bg-blue-50/70 p-5 rounded-3xl max-w-md mx-auto mb-6 border-2 border-blue-200 text-left shadow-inner">
+                        <label class="block text-xs font-black text-blue-800 uppercase mb-1">Nama Anda / Murid <span class="text-rose-500">*</span></label>
+                        <div class="relative mb-3">
+                            <i class="fa-solid fa-user-circle absolute left-3.5 top-3.5 text-blue-400 text-lg"></i>
+                            <input type="text" id="playerName" placeholder="Contoh: Amirah Husna" class="w-full bg-white border-2 border-blue-200 rounded-2xl py-3 pl-10 pr-3 text-sm font-bold text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
+                        </div>
+
+                        <label class="block text-xs font-black text-blue-800 uppercase mb-1">Kelas <span class="text-rose-500">*</span></label>
+                        <div class="relative mb-4">
+                            <i class="fa-solid fa-school absolute left-3.5 top-3.5 text-blue-400 text-lg"></i>
+                            <input type="text" id="playerClass" placeholder="Contoh: 2 Bestari" class="w-full bg-white border-2 border-blue-200 rounded-2xl py-3 pl-10 pr-3 text-sm font-bold text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-center gap-3">
+                        <button onclick="startQuiz()" class="btn-friendly bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-display text-lg sm:text-xl font-bold px-8 py-3.5 rounded-2xl shadow-lg border-2 border-emerald-300 inline-flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-play-circle text-2xl"></i>
+                            <span>MULA MENCUBA!</span>
+                        </button>
+                        <button onclick="toggleLeaderboardModal(true)" class="btn-friendly bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-slate-900 font-display text-lg sm:text-xl font-bold px-6 py-3.5 rounded-2xl shadow-lg border-2 border-amber-200 inline-flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-trophy text-slate-900"></i>
+                            <span>Papan Ranking</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. QUIZ SCREEN -->
+            <section id="quizScreen" class="hidden card-friendly rounded-3xl p-5 sm:p-8 relative my-2 border-t-8 border-t-blue-500">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-4 pb-3 border-b-2 border-slate-100">
+                    <div class="flex items-center justify-between sm:justify-start gap-3">
+                        <span id="subtopicBadge" class="bg-blue-100 text-blue-800 border-2 border-blue-200 text-xs font-black px-3.5 py-1.5 rounded-xl uppercase tracking-wider">
+                            Bab 8: Kedah, Kelantan, N. Sembilan & Perlis
+                        </span>
+                        <div class="flex items-center gap-2 text-amber-800 text-xs sm:text-sm font-black bg-amber-100 px-3.5 py-1.5 rounded-xl border-2 border-amber-200">
+                            <i class="fa-solid fa-star text-amber-500 text-base"></i>
+                            <span>MARKAH: <span id="liveScore" class="text-base text-blue-700">0</span></span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-xs font-extrabold text-slate-700 bg-slate-100 px-3.5 py-1.5 rounded-xl border border-slate-200">
+                        <i class="fa-solid fa-user-check text-emerald-600"></i>
+                        <span id="displayPlayerInfo">Pelajar: -</span>
+                    </div>
+                </div>
+
+                <!-- Booster Cards Panel -->
+                <div class="mb-4 bg-gradient-to-r from-purple-100 via-pink-100 to-amber-100 p-3 rounded-2xl border-2 border-purple-200 shadow-sm flex flex-wrap items-center justify-between gap-2">
+                    <span class="text-xs font-black text-purple-900 uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-purple-600 text-sm"></i> Bantuan Booster:
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <button id="btn5050" onclick="useBooster5050()" class="btn-friendly bg-indigo-500 hover:bg-indigo-600 disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs font-extrabold px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow border border-indigo-300">
+                            <i class="fa-solid fa-scissors text-amber-300"></i>
+                            <span>50:50 (<span id="count5050">2</span>)</span>
+                        </button>
+                        <button id="btnHint" onclick="useBoosterHint()" class="btn-friendly bg-amber-500 hover:bg-amber-600 disabled:opacity-40 disabled:cursor-not-allowed text-slate-900 text-xs font-extrabold px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow border border-amber-300">
+                            <i class="fa-solid fa-lightbulb text-white"></i>
+                            <span>Hint (<span id="countHint">2</span>)</span>
+                        </button>
+                        <button id="btnSkip" onclick="useBoosterSkip()" class="btn-friendly bg-teal-500 hover:bg-teal-600 disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs font-extrabold px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow border border-teal-300">
+                            <i class="fa-solid fa-forward text-emerald-200"></i>
+                            <span>Skip (<span id="countSkip">1</span>)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="flex justify-between text-xs text-slate-600 font-extrabold mb-1">
+                    <span id="queueCountInfo">Baki Soalan: 40</span>
+                    <span id="progressPercentText" class="text-blue-600">0%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-3.5 rounded-full mb-5 overflow-hidden p-0.5 border border-slate-200">
+                    <div id="progressBar" class="bg-gradient-to-r from-blue-400 via-emerald-400 to-amber-400 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+
+                <!-- Question Area -->
+                <div class="mb-5">
+                    <div class="flex items-start gap-3">
+                        <span id="questionNum" class="bg-blue-600 text-white font-display text-base font-bold w-9 h-9 rounded-2xl flex items-center justify-center shrink-0 shadow-md">
+                            1
+                        </span>
+                        <h3 id="questionText" class="text-base sm:text-lg font-black text-slate-800 leading-snug pt-0.5 whitespace-pre-line">
+                            Memuatkan soalan...
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div id="optionsContainer" class="grid grid-cols-1 gap-2.5 mb-5"></div>
+
+                <!-- Hint Banner -->
+                <div id="hintBanner" class="hidden p-4 rounded-2xl mb-4 text-xs sm:text-sm font-bold bg-amber-100 text-amber-900 border-2 border-amber-300 flex items-start gap-2.5 shadow-sm">
+                    <i class="fa-solid fa-lightbulb text-amber-500 text-lg mt-0.5 shrink-0"></i>
+                    <div>
+                        <span class="font-extrabold uppercase">Petunjuk Nota:</span> <span id="hintText" class="font-medium text-slate-800"></span>
+                    </div>
+                </div>
+
+                <!-- Feedback Banner -->
+                <div id="feedbackBanner" class="hidden p-4 rounded-2xl mb-4 text-sm font-bold flex items-start gap-3 border-2 shadow-sm">
+                    <i id="feedbackIcon" class="fa-solid text-2xl mt-0.5 shrink-0"></i>
+                    <div>
+                        <div id="feedbackTitle" class="font-black text-base"></div>
+                        <div id="feedbackText" class="mt-1 font-medium leading-relaxed"></div>
+                    </div>
+                </div>
+
+                <!-- Next Button -->
+                <div class="flex justify-end">
+                    <button id="nextBtn" onclick="nextQuestion()" class="hidden btn-friendly bg-blue-600 hover:bg-blue-700 text-white font-display font-bold text-base px-8 py-3 rounded-2xl shadow-md inline-flex items-center gap-2">
+                        <span>Soalan Seterusnya</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 3. RESULT SCREEN -->
+            <section id="resultScreen" class="hidden card-friendly rounded-3xl p-6 sm:p-10 text-center relative my-2 border-t-8 border-t-amber-400">
+                <div class="mb-3 inline-block bg-amber-100 p-4 rounded-full text-amber-600 border-2 border-amber-300 shadow-sm bubble-glow">
+                    <i class="fa-solid fa-award text-5xl"></i>
+                </div>
+
+                <h2 class="font-display text-3xl sm:text-4xl font-black text-slate-800 mb-1">
+                    Syabas, <span id="resPlayerName" class="text-blue-600">Pelajar</span>! 🎉
+                </h2>
+                <p class="text-slate-600 font-bold text-sm sm:text-base mb-6">
+                    Anda telah berjaya menjawab <span class="font-extrabold text-emerald-600">semua 40 soalan</span> Bab 8!
+                </p>
+
+                <!-- Score Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-lg mx-auto mb-6">
+                    <div class="bg-emerald-50 p-4 rounded-2xl border-2 border-emerald-200">
+                        <div class="text-xs text-emerald-700 font-black uppercase">Markah Akhir</div>
+                        <div id="finalScore" class="font-display text-3xl font-black text-emerald-600 mt-0.5">400</div>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-2xl border-2 border-amber-200">
+                        <div class="text-xs text-amber-700 font-black uppercase">Ketepatan Awal</div>
+                        <div id="accuracyPercent" class="font-display text-3xl font-black text-amber-600 mt-0.5">80%</div>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-2xl border-2 border-indigo-200 col-span-2 sm:col-span-1">
+                        <div class="text-xs text-indigo-700 font-black uppercase">Ulangan Salah</div>
+                        <div id="wrongAttemptsCount" class="font-display text-3xl font-black text-indigo-600 mt-0.5">2</div>
+                    </div>
+                </div>
+
+                <div id="motivationMsg" class="bg-slate-50 p-4 rounded-2xl border-2 border-slate-200 mb-6 max-w-lg mx-auto text-sm text-slate-700 font-bold leading-relaxed">
+                    "Tahniah, penguasaan anda dalam Bab 8 sangat cemerlang!"
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-3">
+                    <button onclick="restartQuiz()" class="btn-friendly bg-blue-600 hover:bg-blue-700 text-white font-display font-bold text-lg px-8 py-3.5 rounded-2xl shadow-lg inline-flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        <span>Cuba Lagi</span>
+                    </button>
+                    <button onclick="toggleLeaderboardModal(true)" class="btn-friendly bg-amber-400 hover:bg-amber-500 text-slate-900 font-display text-lg px-6 py-3.5 rounded-2xl shadow-lg border-2 border-amber-200 inline-flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-list-ol"></i>
+                        <span>Papan Ranking</span>
+                    </button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Leaderboard Modal -->
+    <div id="leaderboardModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl p-6 w-full max-w-lg shadow-2xl border-4 border-amber-400 relative max-h-[90vh] flex flex-col">
+            <button onclick="toggleLeaderboardModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl w-9 h-9 flex items-center justify-center rounded-full bg-slate-100">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-4">
+                <div class="inline-block bg-amber-100 text-amber-600 p-3 rounded-full mb-1">
+                    <i class="fa-solid fa-trophy text-3xl"></i>
+                </div>
+                <h3 class="font-display text-2xl font-black text-slate-800">Papan Ranking Murid</h3>
+                <p class="text-xs font-bold text-slate-500">Kedudukan pelajar terbaik kuiz Sejarah Bab 8</p>
+            </div>
+
+            <div id="leaderboardList" class="flex-grow overflow-y-auto space-y-2 pr-1 my-2"></div>
+
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+                <button onclick="clearLeaderboard()" class="text-rose-500 hover:underline font-bold">Padam Rekod</button>
+                <button onclick="toggleLeaderboardModal(false)" class="bg-slate-800 text-white font-bold px-6 py-2 rounded-xl">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full text-center py-4 text-xs font-bold text-slate-500 bg-white/80 border-t border-slate-200">
+        Sejarah Tingkatan 2 Bab 8 • Kerajaan Kedah, Kelantan, Negeri Sembilan & Perlis • Edisi Mesra Murid
+    </footer>
+
+    <!-- JavaScript Quiz Logic -->
+    <script>
+        function setSafeText(id, text) {
+            const el = document.getElementById(id);
+            if (el) el.innerText = text;
+        }
+
+        function toggleFullScreen() {
+            const doc = document.documentElement;
+            const icon = document.getElementById('fullscreenIcon');
+            const statusText = document.getElementById('fullscreenStatus');
+
+            if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                if (doc.requestFullscreen) {
+                    doc.requestFullscreen();
+                } else if (doc.msRequestFullscreen) {
+                    doc.msRequestFullscreen();
+                } else if (doc.mozRequestFullScreen) {
+                    doc.mozRequestFullScreen();
+                } else if (doc.webkitRequestFullscreen) {
+                    doc.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                }
+                if (icon) icon.className = "fa-solid fa-compress text-purple-600";
+                if (statusText) statusText.innerText = "Keluar Skrin Penuh";
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+                if (icon) icon.className = "fa-solid fa-expand text-purple-600";
+                if (statusText) statusText.innerText = "Skrin Penuh";
+            }
+        }
+
+        const rawQuestionsDatabase = [
+            {
+                id: 1,
+                question: "1. Kerajaan Kedah merupakan antara kerajaan terawal yang diasaskan di negara kita. Bilakah kerajaan Kedah diasaskan?",
+                options: ["A. 630 Masihi", "B. 1181 Masihi", "C. 1762 Masihi", "D. 1843 Masihi"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. 630 Masihi."
+            },
+            {
+                id: 2,
+                question: "2. Siapakah pengasas kerajaan Kedah?",
+                options: ["A. Long Yunus", "B. Raja Melewar", "C. Maharaja Derbar Raja", "D. Syed Hussin Jamalullail"],
+                correctIndex: 2, // C
+                explanation: "Jawapan tepat: C. Maharaja Derbar Raja."
+            },
+            {
+                id: 3,
+                question: "3. Berdasarkan catatan sejarah, Maharaja Derbar Raja berasal dari...",
+                options: ["A. Arab", "B. Parsi", "C. China", "D. India"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Parsi."
+            },
+            {
+                id: 4,
+                question: "4. Apakah sumber yang mencatatkan Maharaja Derbar Raja sebagai pengasas kerajaan Kedah?",
+                options: ["A. Misa Melayu", "B. Hikayat Pahang", "C. Al-Tarikh Salasilah Negeri Kedah", "D. Sulalatus Salatin"],
+                correctIndex: 2, // C
+                explanation: "Jawapan tepat: C. Al-Tarikh Salasilah Negeri Kedah."
+            },
+            {
+                id: 5,
+                question: "5. Perhatikan pernyataan berikut:\nI. Sungai Mas menjadi pusat kerajaan awal Kedah\nII. Kedudukan Kedah strategik untuk perdagangan\nIII. Gunung Jerai menjadi panduan pedagang luar\nIV. Kedah berkembang kerana perlombongan emas sahaja\n\nApakah faktor yang menyebabkan Kedah berkembang sebagai pusat perdagangan?",
+                options: ["A. I dan II", "B. I, II dan III", "C. II dan IV", "D. III dan IV"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. I, II dan III."
+            },
+            {
+                id: 6,
+                question: "6. Apakah alat kebesaran yang digunakan dalam pemasyhuran Raja Kedah?",
+                options: ["A. Nobat", "B. Bunga Mas", "C. Keris Taming Sari", "D. Cap mohor Perak"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Nobat."
+            },
+            {
+                id: 7,
+                question: "7. Sultan Muhammad Jiwa Zainal Adilin Mu’adzam Shah II mengasaskan...",
+                options: ["A. Kota Bharu", "B. Alor Setar", "C. Arau", "D. Seri Menanti"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Alor Setar."
+            },
+            {
+                id: 8,
+                question: "8. Sebelum menjadi kerajaan berdaulat, Kelantan merupakan sebahagian daripada...",
+                options: ["A. Negara Patani Besar", "B. Kesultanan Melayu Melaka", "C. Kesultanan Perak", "D. Kesultanan Pahang"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Negara Patani Besar."
+            },
+            {
+                id: 9,
+                question: "9. Siapakah pengasas kerajaan Kelantan?",
+                options: ["A. Raja Sakti I", "B. Long Yunus", "C. Raja Melewar", "D. Sultan Muhammad II"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Long Yunus."
+            },
+            {
+                id: 10,
+                question: "10. Apakah tindakan utama Long Yunus dalam pengasasan kerajaan Kelantan?",
+                options: ["A. Menghantar Bunga Mas kepada Siam", "B. Menyatukan Kelantan Barat dan Kelantan Timur", "C. Membina Kota Kayang", "D. Mengasaskan Arau"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Menyatukan Kelantan Barat dan Kelantan Timur."
+            },
+            {
+                id: 11,
+                question: "11. Kerajaan Kelantan diasaskan pada tahun...",
+                options: ["A. 630 Masihi", "B. 1708", "C. 1762", "D. 1843"],
+                correctIndex: 2, // C
+                explanation: "Jawapan tepat: C. 1762."
+            },
+            {
+                id: 12,
+                question: "12. Apakah pusat pemerintahan awal kerajaan Kelantan?",
+                options: ["A. Kota Bharu", "B. Kota Kubang Labu", "C. Pangkalan Galoh", "D. Kota Kayang"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Kota Kubang Labu."
+            },
+            {
+                id: 13,
+                question: "13. Tokoh wanita yang terkenal dalam pemerintahan Kelantan ialah...",
+                options: ["A. Che Siti Wan Kembang", "B. Puteri Saadong", "C. Raja Kuning", "D. Tun Fatimah"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Che Siti Wan Kembang."
+            },
+            {
+                id: 14,
+                question: "14. Apakah simbol pemerintahan Kelantan yang dikaitkan dengan Che Siti Wan Kembang?",
+                options: ["A. Gajah", "B. Kijang", "C. Harimau", "D. Burung"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Kijang."
+            },
+            {
+                id: 15,
+                question: "15. Negeri Sembilan pada asalnya merupakan naungan...",
+                options: ["A. Kesultanan Johor Riau", "B. Kesultanan Kedah", "C. Kesultanan Perak", "D. Kesultanan Melaka"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Kesultanan Johor Riau."
+            },
+            {
+                id: 16,
+                question: "16. Masyarakat yang memainkan peranan penting dalam pengasasan Negeri Sembilan ialah...",
+                options: ["A. Bugis", "B. Minangkabau", "C. Jawa", "D. Siam"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Minangkabau."
+            },
+            {
+                id: 17,
+                question: "17. Siapakah pengasas kerajaan Negeri Sembilan?",
+                options: ["A. Raja Lumu", "B. Raja Melewar", "C. Long Yunus", "D. Syed Hussin Jamalullail"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Raja Melewar."
+            },
+            {
+                id: 18,
+                question: "18. Kerajaan Negeri Sembilan diasaskan pada tahun...",
+                options: ["A. 1470", "B. 1528", "C. 1773", "D. 1843"],
+                correctIndex: 2, // C
+                explanation: "Jawapan tepat: C. 1773."
+            },
+            {
+                id: 19,
+                question: "19. Apakah pusat pemerintahan kerajaan Negeri Sembilan?",
+                options: ["A. Arau", "B. Seri Menanti", "C. Kuala Selangor", "D. Kota Bharu"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Seri Menanti."
+            },
+            {
+                id: 20,
+                question: "20. Siapakah yang bertanggungjawab memilih dan melantik Yamtuan Besar Negeri Sembilan?",
+                options: ["A. Sultan Perak", "B. Undang Yang Empat", "C. Raja Siam", "D. Pembesar Johor"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Undang Yang Empat."
+            },
+            {
+                id: 21,
+                question: "21. Pada peringkat awal, Perlis merupakan sebahagian daripada wilayah...",
+                options: ["A. Kelantan", "B. Kedah", "C. Johor", "D. Terengganu"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Kedah."
+            },
+            {
+                id: 22,
+                question: "22. Siapakah pengasas kerajaan Perlis?",
+                options: ["A. Syed Hussin Jamalullail", "B. Raja Melewar", "C. Long Yunus", "D. Maharaja Derbar Raja"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Syed Hussin Jamalullail."
+            },
+            {
+                id: 23,
+                question: "23. Kerajaan Perlis diiktiraf sebagai kerajaan berasingan daripada Kedah pada tahun...",
+                options: ["A. 1762", "B. 1773", "C. 1843", "D. 1909"],
+                correctIndex: 2, // C
+                explanation: "Jawapan tepat: C. 1843."
+            },
+            {
+                id: 24,
+                question: "24. Apakah pusat pentadbiran kerajaan Perlis?",
+                options: ["A. Kangar", "B. Arau", "C. Kota Kayang", "D. Kuala Perlis"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Arau."
+            },
+            {
+                id: 25,
+                question: "25. Apakah tujuan penghantaran Bunga Mas oleh kerajaan Melayu kepada Siam?",
+                options: ["A. Menunjukkan kekuatan tentera", "B. Menjalinkan hubungan persahabatan dan menjamin keselamatan", "C. Menguasai wilayah Siam", "D. Menghapuskan perdagangan luar"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Menjalinkan hubungan persahabatan dan menjamin keselamatan."
+            },
+            {
+                id: 26,
+                question: "26. Apakah asas hubungan antara kerajaan Melayu?",
+                options: ["A. Politik, ekonomi dan ketenteraan", "B. Keserumpunan, geografi dan agama", "C. Bahasa, perdagangan dan peperangan", "D. Teknologi, pendidikan dan budaya"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Keserumpunan, geografi dan agama."
+            },
+            {
+                id: 27,
+                question: "27. Persamaan bahasa, budaya dan adat resam menunjukkan hubungan berdasarkan...",
+                options: ["A. Agama", "B. Geografi", "C. Keserumpunan", "D. Diplomatik"],
+                correctIndex: 2, // C
+                explanation: "Jawapan tepat: C. Keserumpunan."
+            },
+            {
+                id: 28,
+                question: "28. Faktor sungai dan kedudukan pantai mempengaruhi hubungan kerajaan dari aspek...",
+                options: ["A. Agama", "B. Geografi", "C. Keserumpunan", "D. Perundangan"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Geografi."
+            },
+            {
+                id: 29,
+                question: "29. Mengapakah agama menjadi asas hubungan antara kerajaan Melayu?",
+                options: ["A. Islam menjadi penghubung antara pemerintah dan masyarakat", "B. Semua kerajaan menggunakan sistem Barat", "C. Agama digunakan untuk menghapuskan perdagangan", "D. Pemerintah tidak terlibat dalam agama"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Islam menjadi penghubung antara pemerintah dan masyarakat."
+            },
+            {
+                id: 30,
+                question: "30. Apakah tujuan hubungan diplomatik dijalinkan antara kerajaan?",
+                options: ["A. Menghapuskan kerajaan lain", "B. Menjamin keamanan dan mengukuhkan hubungan", "C. Menguasai semua wilayah", "D. Menghentikan perdagangan"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Menjamin keamanan dan mengukuhkan hubungan."
+            },
+            {
+                id: 31,
+                question: "31. Antara berikut, yang manakah cara menjalinkan hubungan diplomatik?\nI. Pengiktirafan\nII. Perkahwinan diraja\nIII. Bantuan pertahanan\nIV. Penutupan pelabuhan",
+                options: ["A. I dan II", "B. I, II dan III", "C. II dan IV", "D. III dan IV"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. I, II dan III."
+            },
+            {
+                id: 32,
+                question: "32. Apakah tujuan pengiktirafan terhadap sesebuah kerajaan?",
+                options: ["A. Mengabsahkan pemerintah dan kerajaan", "B. Menghapuskan kuasa raja", "C. Menamatkan perdagangan", "D. Mengambil alih pemerintahan"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Mengabsahkan pemerintah dan kerajaan."
+            },
+            {
+                id: 33,
+                question: "33. Perkahwinan diraja antara kerajaan Melayu bertujuan untuk...",
+                options: ["A. Mengukuhkan hubungan politik dan diplomatik", "B. Menghapuskan adat istiadat", "C. Menguasai kawasan pertanian", "D. Membina pusat perdagangan sahaja"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Mengukuhkan hubungan politik dan diplomatik."
+            },
+            {
+                id: 34,
+                question: "34. Apakah faktor utama yang menggalakkan hubungan perdagangan antara kerajaan Melayu?",
+                options: ["A. Kedudukan yang strategik dan kemudahan pelabuhan", "B. Penutupan hubungan luar", "C. Larangan pedagang asing", "D. Ketiadaan hasil bumi"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Kedudukan yang strategik dan kemudahan pelabuhan."
+            },
+            {
+                id: 35,
+                question: "35. Apakah pelabuhan utama kerajaan Kelantan?",
+                options: ["A. Kuala Sungai Perak", "B. Pangkalan Galoh", "C. Kuala Selangor", "D. Kuala Kedah"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Pangkalan Galoh."
+            },
+            {
+                id: 36,
+                question: "36. Apakah hasil dagangan utama Kelantan?",
+                options: ["A. Emas", "B. Sutera", "C. Teh", "D. Kapas"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Emas."
+            },
+            {
+                id: 37,
+                question: "37. Perhatikan maklumat berikut:\nKerajaan A:\n- Menghasilkan bijih timah\n- Menghasilkan sirih\n- Menghasilkan kayu gaharu\n\nKerajaan A merujuk kepada...",
+                options: ["A. Kedah", "B. Kelantan", "C. Negeri Sembilan", "D. Perlis"],
+                correctIndex: 2, // C
+                explanation: "Jawapan tepat: C. Negeri Sembilan."
+            },
+            {
+                id: 38,
+                question: "38. Mengapakah kegiatan perdagangan penting kepada kerajaan Melayu?",
+                options: ["A. Menjamin kemakmuran ekonomi kerajaan", "B. Menghapuskan sistem pemerintahan", "C. Mengurangkan hubungan luar", "D. Menyebabkan kerajaan kehilangan kuasa"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Menjamin kemakmuran ekonomi kerajaan."
+            },
+            {
+                id: 39,
+                question: "39. Situasi:\n'Sebuah kerajaan menghantar utusan kepada kerajaan lain untuk mendapatkan pengiktirafan pemerintahnya.'\n\nApakah konsep yang ditunjukkan?",
+                options: ["A. Hubungan perdagangan", "B. Hubungan diplomatik", "C. Perluasan kuasa", "D. Peperangan"],
+                correctIndex: 1, // B
+                explanation: "Jawapan tepat: B. Hubungan diplomatik."
+            },
+            {
+                id: 40,
+                question: "40. Apakah iktibar yang boleh diperoleh daripada hubungan antara kerajaan Melayu?",
+                options: ["A. Kerjasama dapat menjamin kestabilan dan kemajuan", "B. Setiap kerajaan perlu berdiri sendiri tanpa hubungan", "C. Perdagangan perlu dihentikan", "D. Hubungan luar membawa kemunduran"],
+                correctIndex: 0, // A
+                explanation: "Jawapan tepat: A. Kerjasama dapat menjamin kestabilan dan kemajuan."
+            }
+        ];
+
+        let playerInfo = { name: "", class: "" };
+        let questionQueue = [];
+        let totalOriginalQuestions = 0;
+        let initialScore = 0;
+        let totalFirstAttempts = 0;
+        let wrongAttempts = 0;
+        let isBGMPlaying = false;
+        let canAnswer = true;
+
+        let boosterCounts = { c5050: 2, cHint: 2, cSkip: 1 };
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                try {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                } catch(e) {}
+            }
+        }
+
+        let bgmInterval = null;
+        function playBGMNotes() {
+            if (!isBGMPlaying || !audioCtx) return;
+            const notes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
+            const note = notes[Math.floor(Math.random() * notes.length)];
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(note, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.2);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 1.2);
+            } catch (e) {}
+        }
+
+        function toggleBGM() {
+            initAudio();
+            isBGMPlaying = !isBGMPlaying;
+            const statusText = document.getElementById('bgmStatus');
+            const icon = document.getElementById('bgmIcon');
+
+            if (isBGMPlaying) {
+                if (audioCtx && audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                if (statusText) statusText.innerText = "Muzik: ON";
+                if (icon) icon.className = "fa-solid fa-music text-amber-500 animate-bounce";
+                bgmInterval = setInterval(playBGMNotes, 500);
+            } else {
+                if (statusText) statusText.innerText = "Muzik: OFF";
+                if (icon) icon.className = "fa-solid fa-volume-xmark text-slate-400";
+                clearInterval(bgmInterval);
+            }
+        }
+
+        function playSFX(type) {
+            initAudio();
+            if (!audioCtx) return;
+
+            try {
+                if (type === 'correct') {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+                    osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.08);
+                    osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.16);
+                    gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.35);
+                } else if (type === 'wrong') {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+                    osc.frequency.setValueAtTime(175, audioCtx.currentTime + 0.12);
+                    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.3);
+                } else if (type === 'booster') {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+                    osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.25);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.25);
+                } else if (type === 'complete') {
+                    [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+                        const o = audioCtx.createOscillator();
+                        const g = audioCtx.createGain();
+                        o.connect(g);
+                        g.connect(audioCtx.destination);
+                        o.frequency.value = freq;
+                        g.gain.setValueAtTime(0.08, audioCtx.currentTime + i * 0.09);
+                        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.09 + 0.4);
+                        o.start(audioCtx.currentTime + i * 0.09);
+                        o.stop(audioCtx.currentTime + i * 0.09 + 0.4);
+                    });
+                }
+            } catch(e){}
+        }
+
+        function buildQuestionObj(rawQ, isFirstAttempt = true) {
+            return {
+                ...rawQ,
+                firstAttempt: isFirstAttempt
+            };
+        }
+
+        function startQuiz() {
+            const nameEl = document.getElementById('playerName');
+            const classEl = document.getElementById('playerClass');
+            
+            const nameInput = nameEl ? nameEl.value.trim() : "";
+            const classInput = classEl ? classEl.value.trim() : "";
+
+            if (!nameInput || !classInput) {
+                alert("Sila isi Nama dan Kelas anda terlebih dahulu sebelum memulakan latihan!");
+                return;
+            }
+
+            playerInfo.name = nameInput;
+            playerInfo.class = classInput;
+
+            setSafeText('displayPlayerInfo', `Pelajar: ${playerInfo.name} (${playerInfo.class})`);
+
+            initAudio();
+
+            boosterCounts = { c5050: 2, cHint: 2, cSkip: 1 };
+            updateBoosterUI();
+
+            questionQueue = rawQuestionsDatabase.map(q => buildQuestionObj(q, true));
+
+            totalOriginalQuestions = questionQueue.length;
+            initialScore = 0;
+            totalFirstAttempts = 0;
+            wrongAttempts = 0;
+
+            document.getElementById('startScreen')?.classList.add('hidden');
+            document.getElementById('resultScreen')?.classList.add('hidden');
+            document.getElementById('quizScreen')?.classList.remove('hidden');
+
+            setSafeText('liveScore', '0');
+
+            renderQuestion();
+        }
+
+        function updateBoosterUI() {
+            setSafeText('count5050', boosterCounts.c5050);
+            setSafeText('countHint', boosterCounts.cHint);
+            setSafeText('countSkip', boosterCounts.cSkip);
+
+            const btn5050 = document.getElementById('btn5050');
+            const btnHint = document.getElementById('btnHint');
+            const btnSkip = document.getElementById('btnSkip');
+
+            if (btn5050) btn5050.disabled = boosterCounts.c5050 <= 0 || !canAnswer;
+            if (btnHint) btnHint.disabled = boosterCounts.cHint <= 0 || !canAnswer;
+            if (btnSkip) btnSkip.disabled = boosterCounts.cSkip <= 0 || !canAnswer;
+        }
+
+        function useBooster5050() {
+            if (boosterCounts.c5050 <= 0 || !canAnswer) return;
+            
+            const currentQ = questionQueue[0];
+            const optionsContainer = document.getElementById('optionsContainer');
+            if (!optionsContainer) return;
+
+            const buttons = Array.from(optionsContainer.children);
+            let wrongIndices = [];
+
+            buttons.forEach((btn, idx) => {
+                if (idx !== currentQ.correctIndex && !btn.disabled) {
+                    wrongIndices.push(idx);
+                }
+            });
+
+            if (wrongIndices.length >= 2) {
+                const toRemove = wrongIndices.slice(0, 2);
+                toRemove.forEach(i => {
+                    buttons[i].disabled = true;
+                    buttons[i].classList.add('opacity-30', 'line-through');
+                });
+
+                boosterCounts.c5050--;
+                playSFX('booster');
+                updateBoosterUI();
+            }
+        }
+
+        function useBoosterHint() {
+            if (boosterCounts.cHint <= 0 || !canAnswer) return;
+
+            const currentQ = questionQueue[0];
+            setSafeText('hintText', currentQ.explanation);
+            
+            document.getElementById('hintBanner')?.classList.remove('hidden');
+
+            boosterCounts.cHint--;
+            playSFX('booster');
+            updateBoosterUI();
+        }
+
+        function useBoosterSkip() {
+            if (boosterCounts.cSkip <= 0 || !canAnswer) return;
+
+            boosterCounts.cSkip--;
+            playSFX('booster');
+
+            const skippedQ = questionQueue.shift();
+            questionQueue.push(skippedQ);
+
+            updateBoosterUI();
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            canAnswer = true;
+            updateBoosterUI();
+
+            const currentQ = questionQueue[0];
+
+            setSafeText('questionNum', currentQ.id);
+            setSafeText('queueCountInfo', `Baki Soalan: ${questionQueue.length}`);
+
+            const progressPercent = Math.min(100, Math.round(((totalOriginalQuestions - questionQueue.length) / totalOriginalQuestions) * 100));
+            setSafeText('progressPercentText', `${progressPercent}%`);
+
+            const progressBarEl = document.getElementById('progressBar');
+            if (progressBarEl) progressBarEl.style.width = `${progressPercent}%`;
+
+            setSafeText('questionText', currentQ.question);
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            if (optionsContainer) {
+                optionsContainer.innerHTML = '';
+
+                currentQ.options.forEach((opt, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = "btn-friendly w-full text-left p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 bg-white hover:bg-blue-50/70 hover:border-blue-400 transition-all font-bold text-slate-800 flex items-center justify-between group shadow-sm";
+                    btn.onclick = () => checkAnswer(index);
+                    
+                    btn.innerHTML = `
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs sm:text-sm leading-snug font-bold">${opt}</span>
+                        </div>
+                        <i class="fa-regular fa-circle text-slate-300 group-hover:text-blue-500 shrink-0 ml-2 text-base transition-colors"></i>
+                    `;
+                    optionsContainer.appendChild(btn);
+                });
+            }
+
+            document.getElementById('hintBanner')?.classList.add('hidden');
+            document.getElementById('feedbackBanner')?.classList.add('hidden');
+            document.getElementById('nextBtn')?.classList.add('hidden');
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (!canAnswer) return;
+            canAnswer = false;
+            updateBoosterUI();
+
+            const currentQ = questionQueue[0];
+            const optionsContainer = document.getElementById('optionsContainer');
+            const buttons = optionsContainer ? optionsContainer.children : [];
+            const feedbackBanner = document.getElementById('feedbackBanner');
+            const feedbackIcon = document.getElementById('feedbackIcon');
+
+            Array.from(buttons).forEach(btn => btn.disabled = true);
+
+            if (selectedIndex === currentQ.correctIndex) {
+                playSFX('correct');
+                if (buttons[selectedIndex]) {
+                    buttons[selectedIndex].className = "w-full text-left p-3.5 sm:p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50 font-bold text-emerald-950 flex items-center justify-between shadow-sm";
+                    const icon = buttons[selectedIndex].querySelector('i');
+                    if (icon) icon.className = "fa-solid fa-circle-check text-emerald-600 text-lg shrink-0 ml-2";
+                }
+
+                if (feedbackBanner) feedbackBanner.className = "p-4 rounded-2xl mb-4 text-sm font-medium flex items-start gap-3 bg-emerald-100 text-emerald-950 border-2 border-emerald-300 shadow-sm";
+                if (feedbackIcon) feedbackIcon.className = "fa-solid fa-circle-check text-2xl text-emerald-600 mt-0.5 shrink-0";
+                
+                setSafeText('feedbackTitle', 'JAWAPAN TEPAT! 🎉');
+                setSafeText('feedbackText', currentQ.explanation);
+
+                if (currentQ.firstAttempt) {
+                    initialScore += 10;
+                    totalFirstAttempts++;
+                    setSafeText('liveScore', initialScore);
+                }
+
+                questionQueue.shift();
+
+            } else {
+                playSFX('wrong');
+                wrongAttempts++;
+
+                if (buttons[selectedIndex]) {
+                    buttons[selectedIndex].className = "w-full text-left p-3.5 sm:p-4 rounded-2xl border-2 border-rose-400 bg-rose-50 font-bold text-rose-950 flex items-center justify-between shadow-sm";
+                    const icon = buttons[selectedIndex].querySelector('i');
+                    if (icon) icon.className = "fa-solid fa-circle-xmark text-rose-600 text-lg shrink-0 ml-2";
+                }
+
+                if (buttons[currentQ.correctIndex]) {
+                    buttons[currentQ.correctIndex].className = "w-full text-left p-3.5 sm:p-4 rounded-2xl border-2 border-emerald-400 bg-emerald-50/80 font-bold text-emerald-950 flex items-center justify-between";
+                }
+
+                if (feedbackBanner) feedbackBanner.className = "p-4 rounded-2xl mb-4 text-sm font-medium flex items-start gap-3 bg-rose-100 text-rose-950 border-2 border-rose-300 shadow-sm";
+                if (feedbackIcon) feedbackIcon.className = "fa-solid fa-triangle-exclamation text-2xl text-rose-600 mt-0.5 shrink-0";
+                
+                setSafeText('feedbackTitle', 'KURANG TEPAT! 💡');
+                setSafeText('feedbackText', `${currentQ.explanation} Soalan ini akan diselitkan semula di hujung giliran!`);
+
+                const wrongRawQ = rawQuestionsDatabase.find(q => q.id === currentQ.id);
+                questionQueue.shift();
+                
+                if (wrongRawQ) {
+                    const reshuffledQ = buildQuestionObj(wrongRawQ, false);
+                    questionQueue.push(reshuffledQ);
+                }
+            }
+
+            feedbackBanner?.classList.remove('hidden');
+            document.getElementById('nextBtn')?.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            if (questionQueue.length > 0) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            playSFX('complete');
+
+            try {
+                confetti({
+                    particleCount: 150,
+                    spread: 90,
+                    origin: { y: 0.6 }
+                });
+            } catch(e){}
+
+            document.getElementById('quizScreen')?.classList.add('hidden');
+            document.getElementById('resultScreen')?.classList.remove('hidden');
+
+            const accuracy = Math.round((totalFirstAttempts / totalOriginalQuestions) * 100);
+
+            setSafeText('resPlayerName', playerInfo.name);
+            setSafeText('finalScore', initialScore);
+            setSafeText('accuracyPercent', `${accuracy}%`);
+            setSafeText('wrongAttemptsCount', wrongAttempts);
+
+            saveScoreToLeaderboard(playerInfo.name, playerInfo.class, initialScore, accuracy);
+
+            let motivationMsg = "";
+            if (accuracy === 100) {
+                motivationMsg = "🌟 LUAR BIASA! Anda menjawab SEMUA soalan dengan betul pada percubaan pertama. Pemahaman anda dalam Bab 8 Kerajaan Kedah, Kelantan, Negeri Sembilan dan Perlis sangat sempurna!";
+            } else if (accuracy >= 75) {
+                motivationMsg = "👍 SYABAS! Penguasaan anda dalam Bab 8 sangat cemerlang. Teruskan kecemerlangan ini!";
+            } else {
+                motivationMsg = "💪 USAHA YANG SANGAT BAGUS! Hasil pengulangan soalan, kini anda telah menguasai keseluruhan Bab 8 dengan mantap!";
+            }
+            setSafeText('motivationMsg', motivationMsg);
+        }
+
+        function getLeaderboardData() {
+            try {
+                const data = localStorage.getItem('sejarah_bab8_leaderboard');
+                return data ? JSON.parse(data) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveScoreToLeaderboard(name, pClass, score, accuracy) {
+            try {
+                let leaderboard = getLeaderboardData();
+                
+                leaderboard.push({
+                    name: name,
+                    class: pClass,
+                    score: score,
+                    accuracy: accuracy,
+                    date: new Date().toLocaleDateString('ms-MY')
+                });
+
+                leaderboard.sort((a, b) => b.score - a.score || b.accuracy - a.accuracy);
+                leaderboard = leaderboard.slice(0, 20);
+
+                localStorage.setItem('sejarah_bab8_leaderboard', JSON.stringify(leaderboard));
+            } catch (e) {}
+        }
+
+        function renderLeaderboardList() {
+            const listContainer = document.getElementById('leaderboardList');
+            if (!listContainer) return;
+
+            const leaderboard = getLeaderboardData();
+
+            if (leaderboard.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="text-center py-8 text-slate-400 font-bold text-sm italic">
+                        Belum ada rekod. Jadi yang pertama mengisi papan ranking!
+                    </div>
+                `;
+                return;
+            }
+
+            listContainer.innerHTML = '';
+            leaderboard.forEach((item, index) => {
+                let badgeClass = "bg-slate-100 text-slate-600";
+                let iconHtml = `<span class="font-bold text-xs">#${index + 1}</span>`;
+
+                if (index === 0) {
+                    badgeClass = "bg-amber-100 text-amber-700 border border-amber-300";
+                    iconHtml = `<i class="fa-solid fa-crown text-amber-500"></i>`;
+                } else if (index === 1) {
+                    badgeClass = "bg-slate-200 text-slate-700 border border-slate-300";
+                    iconHtml = `<i class="fa-solid fa-medal text-slate-400"></i>`;
+                } else if (index === 2) {
+                    badgeClass = "bg-amber-700/10 text-amber-800 border border-amber-600/30";
+                    iconHtml = `<i class="fa-solid fa-award text-amber-700"></i>`;
+                }
+
+                const itemEl = document.createElement('div');
+                itemEl.className = "flex items-center justify-between bg-slate-50 p-3.5 rounded-2xl border border-slate-200 text-sm shadow-sm";
+                itemEl.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-xl flex items-center justify-center ${badgeClass} shrink-0">
+                            ${iconHtml}
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-800 leading-tight">${item.name}</div>
+                            <div class="text-xs font-semibold text-slate-400 mt-0.5">${item.class} • ${item.date}</div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="font-display font-black text-blue-600 text-base">${item.score} pt</div>
+                        <div class="text-[10px] font-bold text-slate-400">${item.accuracy}% ketepatan</div>
+                    </div>
+                `;
+                listContainer.appendChild(itemEl);
+            });
+        }
+
+        function toggleLeaderboardModal(show) {
+            const modal = document.getElementById('leaderboardModal');
+            if (modal) {
+                if (show) {
+                    renderLeaderboardList();
+                    modal.classList.remove('hidden');
+                } else {
+                    modal.classList.add('hidden');
+                }
+            }
+        }
+
+        function clearLeaderboard() {
+            if (confirm("Adakah anda pasti mahu memadamkan semua rekod dalam papan ranking?")) {
+                try {
+                    localStorage.removeItem('sejarah_bab8_leaderboard');
+                } catch(e){}
+                renderLeaderboardList();
+            }
+        }
+
+        function restartQuiz() {
+            document.getElementById('resultScreen')?.classList.add('hidden');
+            document.getElementById('startScreen')?.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
